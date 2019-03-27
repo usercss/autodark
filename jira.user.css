@@ -1,0 +1,40 @@
+/* ==UserStyle==
+@name         jira - autodark
+@version      0.1.0
+@description  jira - autodark
+@namespace    tst2005
+@author       tst2005
+@homepageURL  https://github.com/usercss/autodark
+@supportURL   https://github.com/usercss/autodark/issues
+@updateURL    https://raw.githubusercontent.com/usercss/autodark/master/jira.user.css
+@license      MIT
+@preprocessor uso
+==/UserStyle== */
+@-moz-document regexp("^https://[^/]+/jira/secure/.*$"), regexp("^https://jira\\.[^/]+/secure/.*$") {
+html {
+    filter: invert(1) hue-rotate(180deg) brightness(90%) contrast(90%);
+}
+body {
+    background-color: #141314;
+}
+
+/* recuperer les images normalement */
+img {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* les pseudo-fullscreen pour montrant un fichier attaché s'affiche deja en fond dark. */
+#cp-container-1,
+.cp-image-container {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* obtenir la barre de header comme l'original */
+#header {
+    filter: invert(1) hue-rotate(180deg);
+}
+#logo,
+#user-options {
+    filter: invert(1) hue-rotate(180deg);
+}
+}
