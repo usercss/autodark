@@ -1,0 +1,247 @@
+/* ==UserStyle==
+@name         github.com - autodark
+@version      0.1.0
+@description  github.com - autodark
+@namespace    tst2005
+@author       tst2005
+@homepageURL  https://github.com/usercss/autodark
+@supportURL   https://github.com/usercss/autodark/issues
+@updateURL    https://raw.githubusercontent.com/usercss/autodark/master/github-com.user.css
+@license      MIT
+@preprocessor uso
+==/UserStyle== */
+@-moz-document domain("github.com") {
+html {
+    filter: contrast(95%) brightness(95%) invert(1) hue-rotate(180deg);
+}
+
+body {
+    background-color: #131313;
+}
+
+/* tweek for the header bar in wiki/doc */
+/* sample: https://developer.github.com/v3/#rate-limiting */
+html body.api header.site-header_OBSOLETE_ {
+    background-color: #1e1e1e;
+    filter: invert(1) hue-rotate(180deg);
+}
+/* html body.api header.site-header div#header.container a.site-header-logo {
+    filter: invert(1) hue-rotate(180deg);
+} */   
+/* the header bar will stay dark*/
+html body header[role="banner"] {
+    background-color: #131313;
+    filter: invert(1) hue-rotate(180deg);
+}
+
+
+/* already dark, do not invert */
+pre.command-line {
+    background-color: #2b2b2b;
+    filter: invert(1) hue-rotate(180deg);   
+}
+
+
+
+/* account/profile menu */
+.dropdown details details-menu .dropdown-divider,
+.dropdown details details-menu {
+    background-color: #f0f0f0;
+    filter: invert(1) hue-rotate(180deg);
+}
+
+
+/* restore the original image for avatars */
+div#dashboard div.AvatarStack div.AvatarStack-body img.avatar,
+button.btn-link > g-emoji.emoji > img,
+g-emoji.g-emoji > img,
+a > img {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* style fix, bug: avatar border line become visible */
+div#dashboard div.AvatarStack div.AvatarStack-body img.avatar,
+a.u-photo > img {
+    /* border-color: #2E3135; */
+    border-color: transparent;
+}
+
+
+/* error 404 fix */
+body div#parallax_wrapper div#parallax_illustration img#parallax_speeder,
+body div#parallax_wrapper div#parallax_illustration img#parallax_octocat {
+    filter: invert(1) hue-rotate(180deg) !important;
+}
+
+
+/*.avatar */
+body {
+    background-color: #222 !important;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAAAAABURb1YAAAFnklEQVR4AWWXCY4cwXbE6h4JMhCvMPc/ov+3Ox9QsLCGpKlFHILd+UQ559AGDkBSFXWmomonqkL/XuUcIPUcONjHCJyE36KaqNiaRnVCG9TGpgIU9hIfohCBVGj24ammo04lU3Fy0NZDAyZi5AElHjgEGlRbG1WjraIt7TmADQkAaoEHsOXAAaeqat9RVTqjosyEH5W+DQCQt8BzIJMfXJI3e5tGRefSlRn3NrO3scnvNl26FN5RITGNfjm3GM/+FhQgnlQeImC+dEm8rzHVTNGL9EADVsTAIfGJBziRy7RlmcZU1IYpHIj+4JrWym8/XSwzompmFNVOFdTOAAfs61KZ6eXcp57fykQUOxNBmTesz2HpCnCg3UV/bA7VRpWGNqKtrYLTs0ilCjgxiZxjeLC5dDPBFn4Pn2ja6BRUL10DTgET4Focq8rn8casxV4E5tIlZvytqtfivCOKZrqc38G7egnkXecyPZdzubc57VtUnbfL+a0u3b1N3d9Mci7cKocHoh3xihLQ6fXUlgTOOfVkXSUFINoWHhqxE23RTmCqtoEJaITkIrUCkU9fnqpqm+40VSXS3CLaSzfGBb4rPuOSfN0ylLve6/jpcrbL2dTlnOdv5AamKjLvLN1XruMNS/cul/hx8twKpKYRaE2DOp8+c+lW7uVXVQ7Vx0x1G3HXjNocsHCac7NbWc6egwJVHu2kRTVNC2pqv2U4XNsv5/yWJlV9+NJ1C7xluInlcr7rK+Kg+qy7onQqgnbi7UHcS3qXjdw3bO5tumycYlVssMI5EXXpRnatPK362KodtVU60cm+eQT10sVLFwJYlVaf7UGSoi5dQF3DvnTX3UvXTPO8quKH7jsXhm/PxfKWZXqBM5sS33kmKtC31Q05fI095i5IPpyzRXqSy1Sr17p1F7NE8vMtnNbLpVVtk8c0OrfF0sKxHnIpYgHW4puMomTz8mgmrSjpvrxhX97l7LqLpl7bW9BH9/MNzF8XwRqL8/m7c30eFYV5VX3QTquK06XbLt16F4ks+8Z9m6gPtpcuk3OvibCekng4lzMHi9MoqZmKj9tdbQCbc7bcEA+oEJduRNNL1waf1tuI9MDBUK8t3k9uFz3rrqadO9Ln9TL/ezlwDvky3TW7ZmXfpc77TN0yhOXnP939LvVDV9s+tgLTm0TqYd1lea3PRFuVjLa562HdPbCfascGrvO3DMeIATVqVRO8vfHrbupdfo1dzlXUdkVLZsS1mLPG3rWcl+4B1l1537h0VXzU1tyLG7cCu+LSrSqo06hocy3WCcil65qHDbuEYzQN2HpT3jFt9LEFvHTP1nxbXOEkbhkKmd+6BTfVZ/I143z/Fyz6Za92o0I7I6gzfeYAHPwy/Rb43L9TLtMt8CtwW1xvQvbR1g9n7qJRNN1kdxcdH7cM58Szxq679MdLOhE72t6VNEpHHkzwRyjBcGth+dE99pIkVbWaEWmvnQ8Yl7Mp59zpRWXdNo6odrO754Zzvxf/010nP7onb1TR+bgbVPB9PcADJvH/043Kvk0UzLRxQ6UiaeTAcyxYl2lyrrvZv8v2wE7U1uVcST0821jJeIDKWuyxiqnuko7q3+zJYXJ46nV3D67EyL+lQ9F2qkr+3kUafQpwYE8T329p6y7OX1TF97fQv/c+l87zj7Hsgpig4qRLd9fMPs74rLGyCzRbhmVqpy7nqvPmTD1gvKe7b2U8u1QzmtuDuEtbgT3c8QBJveo6cueFkUwv59nVmfFw1jl4/unuOT9qERV76ers8n23z/c8/Xy7a4lwwLplmGusbRp33Up13+ZDN3KPxNVMhY62vUQyRTse6+cKHtZYjIfDh260Cjbb3Vy6R8H8SMBzqSwrsB1UTacoknlnOb8V4JD9Njfpwz/fHjpBUeevcAtcl65sqXPX9D87RUTLc/dfOgAAAABJRU5ErkJggg==) !important;
+    background-clip: border-box !important;
+    background-origin: padding-box !important;
+    background-attachment: scroll !important;
+    background-repeat: repeat !important;
+    background-size: auto !important;
+    background-position: left top !important;
+}
+
+input.tree-finder-input,
+input.tree-finder-input:focus,
+input.js-site-search-focus {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* table, .pr-toolbar */
+/* transparent background only */
+.pagehead.repohead.readability-menu,
+a.selected.reponav-item,
+body > pre,
+.textographic a.repo,
+.stars-browser .filter-bar,
+.highlight .file-diff-line:hover pre,
+.gravatar,
+.topsearch span.search-input,
+p.meta,
+.sidebar .milestone,
+.commit-desc pre,
+#facebox,
+.profilecols .filter-bar,
+.btn-group,
+div.content-header .search-form,
+.file-code,
+.org-header .edit-org:hover,
+.gist-advanced-options .select-menu-button:after,
+#wrapper,
+li.commit,
+li.public,
+.gravatar img,
+.commit-comments-header-sha,
+pre.headers code,
+.audit-search-form,
+.columns.equacols.bordered,
+.gist-item ul.meta > li > a:hover,
+.commits li img,
+a.minibutton code,
+.milestone,
+.keyboard-mappings th,
+.api #header-wrapper .nav,
+.marketing-nav a.selected,
+#graph_data .tabs,
+.org-nav-item.selected,
+.edit-team-member:hover,
+tr.commit,
+.release-timeline .js-details-container,
+.section-heading-title a.js-selected-navigation-item,
+.featured-callout .screenshot,
+.timeline-commits .commit-meta .status,
+.theme-picker-spinner,
+.timeline-commits .commit-meta .octicon,
+.file .meta-divider,
+.avatar-stack.multiple-avatars:before,
+#feedHandler,
+.discussion-sidebar-item .thread-subscription-status,
+.boxed-group.application-show-group .logo-upload,
+.diagram-icon-small,
+.commits-listing .commit-group-title .octicon-git-commit,
+#readme .highlight,
+.ace-github,
+.add-member-team-list.table-list,
+.theme-picker,
+.avatar-stack .avatar,
+.boxed-group,
+.full-commit .btn.btn-outline,
+.prose-diff > .markdown-body ins,
+.header .divider-vertical,
+.ace-github-base16,
+.markdown-body pre code,
+.markdown-body pre tt,
+#readme .plain pre,
+.uploaded-files,
+.merge-pr-more-commits code,
+.input_area,
+#notebook .highlight,
+#notebook .highlight pre,
+.output_area pre,
+.gist-snippet-meta .gist-count-links > li > a:hover,
+.markdown-body img,
+.delete-owners-button:hover,
+.avatar-child,
+.session-authentication .header-logged-out,
+.session-authentication .auth-form-header,
+.timeline-progressive-disclosure-items,
+#com #footer,
+.diffbar,
+.shade-gradient,
+#categories .list,
+.gist-banner,
+.main-content,
+.showcase-page-header,
+.showcase-page-pattern:after,
+.description-inline,
+.result-group a,
+.border-wrap,
+a.feed-icon,
+.session-device,
+.boxed-group-list > li.session-device:hover,
+#message-list .pagination a,
+#message-list .pagination .disabled,
+.merge-status-item .merge-status-icon,
+.js-release-form .comment-form-head.tabnav,
+.project-columns,
+.project-header,
+.user-profile-nav,
+.profile-timeline-year-list.bg-white,
+.discussion-item-review .timeline-comment,
+.libraries-jumbotron,
+.sidebar-module h3 a:hover,
+.menu-item.selected,
+.bg-shade-gradient,
+.dev-hero,
+.render-container.is-render-ready.is-render-requested:not(.is-render-failed),
+.user-list li em,
+.toolbar-commenting .dropdown-item,
+.toolbar-commenting .dropdown-item:hover,
+.CodeMirror-lines,
+.api table,
+.dashboard-notice .coupon,
+.release-label,
+.oauth-org-access-details .oauth-org-item.on,
+.MarketplaceSideNav,
+.timeline-inline-comments,
+.AvatarStack-body,
+.team-left-column,
+.team-discussions-container,
+.Collection ~ div[style*="linear-grad"],
+.application-main > div[style*="background"],
+.AvatarStack-body .avatar,
+.dropdown-toggle,
+.repohead.experiment-repo-nav,
+ul.add-member-team-list.table-list,
+.gh-header {
+    background: none !important;
+}
+.select-menu-item:not(.selected) .select-menu-item-icon {
+    color: transparent !important;
+}
+/* remove background gradient */
+.big-notice,
+.clean td,
+.legend .clean,
+.avatar .overlay.size-48,
+.listing.closed,
+.gist .gist-file .gist-data,
+.gist-syntax,
+.gist .gist-file .gist-data .line-numbers,
+.listing .repo,
+.render-shell .leaflet-marker-pane img,
+.showcase-page-pattern,
+.showcase-page-pattern:after,
+#notebook .output_png img,
+.signup-prompt-bg {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+}
