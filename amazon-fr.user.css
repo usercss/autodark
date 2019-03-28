@@ -1,0 +1,42 @@
+
+/* ==UserStyle==
+@name         amazon.fr - autodark
+@version      0.1.0
+@description  amazon.fr - autodark
+@namespace    tst2005
+@author       tst2005
+@homepageURL  https://github.com/usercss/autodark
+@supportURL   https://github.com/usercss/autodark/issues
+@updateURL    https://github.com/usercss/autodark/raw/master/amazon-fr.user.css
+@license      MIT
+@preprocessor uso
+==/UserStyle== */
+@-moz-document domain("amazon.fr") {
+html {
+    filter: contrast(95%) brightness(95%) invert(1) hue-rotate(180deg);
+}
+img {
+    filter: invert(1) hue-rotate(180deg);
+}
+body {
+    background-color: #131313;
+}
+html body div#a-page div#yourOrdersBottom div#navFooter a#navBackToTop div.navFooterBackToTop span.navFooterBackToTopText {
+    background-color: #222;
+}
+html body div#a-page div#yourOrdersBottom div#navFooter {
+    background-color: #131313;
+    filter: invert(1) hue-rotate(180deg);
+}
+html body div#a-page div#yourOrdersBottom div#navFooter div.navFooterCopyright {
+    background-color: #131313;
+}
+html body div#a-page div#yourOrdersBottom div#navFooter.navLeftFooter div.navFooterLine.navFooterLinkLine.navFooterDescLine {
+    background-color: #131313;
+}
+html body div#a-page header div#navbar div#nav-belt,
+html body div#a-page header div#navbar div#nav-main {
+    background-color: #131313;
+    filter: invert(1) hue-rotate(180deg);
+}
+}
