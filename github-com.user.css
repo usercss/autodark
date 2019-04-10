@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         github.com - autodark
-@version      0.2.0
+@version      0.2.1
 @description  github.com - autodark
 @namespace    tst2005/autodark/github-com
 @author       tst2005
@@ -28,8 +28,10 @@ html body.api header.site-header_OBSOLETE_ {
 /* html body.api header.site-header div#header.container a.site-header-logo {
     filter: invert(1) hue-rotate(180deg);
 } */   
-/* the header bar will stay dark*/
-html body header[role="banner"] {
+/* the header bar will stay dark */
+html body div.Header[role="banner"], /* on https://gist.github.com/USER */
+html body header[role="banner"]      /* on https://github.com/USER      */
+{
     background-color: #131313;
     filter: invert(1) hue-rotate(180deg);
 }
