@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name         gitea.com - autodark
-@version      0.1.0
-@description  gitea.com - autodark
+@name         gitea - autodark
+@version      0.1.1
+@description  gitea - autodark
 @namespace    tst2005/autodark/gitea
 @author       tst2005
 @homepageURL  https://github.com/usercss/autodark
@@ -10,9 +10,7 @@
 @license      MIT
 @preprocessor uso
 ==/UserStyle== */
-
 @-moz-document url-prefix("https://try.gitea.io/"), regexp("https://[^/]+/gitea[/.-].*") {
-
 html {
     filter: invert(1) hue-rotate(180deg) contrast(85%) brightness(85%);
 }
