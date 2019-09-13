@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         jira - autodark
-@version      0.2.0
+@version      0.2.1
 @description  jira - autodark
 @namespace    tst2005/autodark/jira
 @author       tst2005
@@ -35,6 +35,11 @@ img {
 }
 #logo,
 #user-options {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* comment preview content (inside iframe) */
+html body#tinymce.mce-content-body pre.code.panel {
     filter: invert(1) hue-rotate(180deg);
 }
 }
