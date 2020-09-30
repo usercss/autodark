@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         jira - autodark
-@version      0.2.1
+@version      0.2.2
 @description  jira - autodark
 @namespace    tst2005/autodark/jira
 @author       tst2005
@@ -10,7 +10,7 @@
 @license      MIT
 @preprocessor uso
 ==/UserStyle== */
-@-moz-document regexp("^https://[^/]+/jira/.*$"), regexp("^https://jira\\.[^/]+/.*$") {
+@-moz-document regexp("^https://[^/]+/jira/.*$"), regexp("^https://jira\\.[^/]+/.*$"), regexp("^https://[^/]+/confluence/.*$") {
 html {
     filter: invert(1) hue-rotate(180deg) brightness(90%) contrast(90%);
 }
